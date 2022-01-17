@@ -8,7 +8,7 @@ import animations as anima
 
 proj_desc_1 =  '''
     <p style="font-size:20px">
-    Hey Guys!!!🙋‍♂️ Welcome to my Webapp 🙌🎆. <br> 
+    Hey Guys!!!🙋‍♂️ Welcome to my Webapp 🙌🎆. 
     This website is used to predict the selling price💲of used cars 🚗 based on 5 specific features of the car.<br> 
     This website estimates the selling price💲 of any car🚙 based on Machine Learning Approach. In the Machine Learning approach, we provide the Machine
     learning algorithm with some data. Then the algorithm creates a Machine Learning model which estimates the selling price of used cars

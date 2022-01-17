@@ -1,11 +1,29 @@
 import streamlit as st
 import webpages as page
+from PIL import Image
+
+# STREAMLIT CONFIGURING PAGE
+
+img = Image.open(r'Logo\logo_1.jpg')
+
+st.set_page_config(layout="wide",page_title='Cars Price Prediction',page_icon=img)
+
+hide_menu = '''
+    <style>
+    #MainMenu {visibility:hidden;}
+    footer {visibility:hidden;}
+    </style>
+    '''
+st.markdown(hide_menu,unsafe_allow_html=True)
+
+# VARIABLES
 
 menu_name = "Navigation".upper()
 
 menu_items = ['Home','EDA','Predict Price']
 
-st.set_page_config(layout="wide")
+
+# MAIN FUNCTION
 
 def main() :
     
