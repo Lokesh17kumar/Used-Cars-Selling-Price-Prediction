@@ -1,5 +1,5 @@
-import webpages as page
 import streamlit as st
+import webpages as page
 
 menu_name = "Navigation".upper()
 

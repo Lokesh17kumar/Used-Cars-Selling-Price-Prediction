@@ -3,6 +3,8 @@ import pipeline as pp
 import display as dis
 import eda
 import pandas as pd
+from streamlit_lottie import st_lottie
+import animations as anima
 
 proj_desc_1 =  '''
     <p style="font-size:20px">
@@ -33,13 +35,13 @@ eda_text_1 = '''
 
 eda_text_2 = '''
     <p style="font-size:20px">
-    Correlation is an indication about the changes between two variables. The checkbox below is used to view cor-relation between my data. 
+    <br>Correlation is an indication about the changes between two variables. The checkbox below is used to view cor-relation between my data. 
     </p>
 '''
 
 eda_text_3 = '''
     <p style="font-size:20px">
-    The following are the features of my project data.
+    <br>The following are the features of my project data.
     </p>
 '''
 
@@ -66,71 +68,27 @@ eda_text_4 = '''
     </p>
 '''
 
+home_page_gif = r'Animations\CARS\home_page.json'
 
+eda_page_gif = r'Animations\ANALYSIS\analysis_3.json'
 
-sell_image = r'Images\predict_page_img3.jpg'
-
-marketing_image = r'Images\Akshay-Kumar-CarDekho.png'        
-
-eda_logo = r'Images\eda.jpg'
+predict_page_gif = r'Animations\PRICE\price_1.json'
 
 eda_title = '<p style="serif;color:#2cd361;font-size:40px;"><center> Exploratory Data Analysis </center></p>'
 
-predict_header = '<p style="serif;color:#FCE205;font-size:40px;"><center> Predict Selling Price💲of your car🚗 </center></p>'
+predict_header = '<p style="serif;color:#FCE205;font-size:40px;"><center> Predict Selling Price Of Your Car </center></p>'
 
-website_title = '<p style="font-family:Franklin Gothic Medium;color:#FF5700;font-size:40px;"><center>PRICE💲 PREDICTION OF USED CARS🚗🏎️🚙 USING MACHINE LEARNING</center></p>'
+website_title = '<p style="font-family:Franklin Gothic Medium;color:#FF5700;font-size:45px;"><center>PRICE PREDICTION OF USED CARS USING MACHINE LEARNING</center></p>'
 
 file_path = r'Data\MAIN DATA.csv'
 
+gif_1 = anima.loadLottie(home_page_gif)
+
+gif_2 = anima.loadLottie(eda_page_gif)
+
+gif_3 = anima.loadLottie(predict_page_gif)
 
 ## USER-DEFINED FUNCTIONS  
-
-def buttonAlignCenter(text):
-    
-    ''' Function to align button in the center'''
-    
-    # SPLITTING INTO # COLUMNS
-    col1, col2, col3 = st.columns([2, 5, 2])
-    
-    # ALIGNING THE IMAGE IN THE CENTER
-    with col1:
-        
-        st.write("")
-
-    with col2:
-        
-        pass
-        # DISPLAYING IMAGE IN THE CENTER
-        #col2.
-
-    with col3:
-        
-        st.write("")
-
-
-def imageAlignCenter(img):
-    
-    ''' Function to align Image in the center'''
-    
-    # SPLITTING INTO # COLUMNS
-    col1, col2, col3 = st.columns([2, 5, 2])
-    
-    # ALIGNING THE IMAGE IN THE CENTER
-    with col1:
-        
-        st.write("")
-
-    with col2:
-        
-        # DISPLAYING IMAGE IN THE CENTER
-        col2.image(img,use_column_width=True)
-
-    with col3:
-        
-        st.write("")
-
-
-
    
 def homePage() :
         
@@ -139,8 +97,8 @@ def homePage() :
     # WEB-PAGE TITLE
     st.markdown(website_title,unsafe_allow_html=True)
     
-    # DISPLAY IMAGE
-    imageAlignCenter(marketing_image)
+    # DISPLAY ANIMATION    
+    st_lottie(gif_1,speed=0.8,reverse=False,loop=True,quality='high',height=500)
     
     # DISPLAYING TEXT
     st.markdown(proj_desc_1,unsafe_allow_html=True)
@@ -158,11 +116,8 @@ def edaPage() :
     # DISPLAYING TEXT
     st.markdown(eda_title,unsafe_allow_html=True)
     
-    # SPLITTING INTO # COLUMNS
-    col1, col2, col3 = st.columns([2, 5, 2])
-    
-    # DISPLAY IMAGE
-    imageAlignCenter(eda_logo)
+    # DISPLAY ANIMATION    
+    st_lottie(gif_2,speed=0.7,reverse=False,loop=False,quality='high',height=550)
     
     # DISPLAY TEXT
     st.markdown(eda_text_1,unsafe_allow_html=True)
@@ -203,11 +158,9 @@ def predictPage() :
     # PAGE HEADER
     st.markdown(predict_header,unsafe_allow_html=True)
     
-    # SPLITTING INTO # COLUMNS
-    col1, col2, col3 = st.columns([2, 5, 2])
+    # DISPLAY ANIMATION    
+    st_lottie(gif_3,speed=1,reverse=False,loop=True,quality='high',height=550)
     
-    # DISPLAY IMAGE
-    imageAlignCenter(sell_image)
     
     ## INPUTS FOR OUR MODEL
     inp1 = st.text_input('Enter the minimum cost price of your vehicle : '.upper(),placeholder="ENTER THE MINIMUM COST PRICE VALUE IN RUPEES")
