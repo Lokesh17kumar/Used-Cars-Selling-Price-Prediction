@@ -4,7 +4,7 @@ from PIL import Image
 
 # STREAMLIT CONFIGURING PAGE
 
-img = Image.open(r'Logo\logo_1.jpg')
+img = Image.open(r'logo_1.jpg')
 
 st.set_page_config(layout="wide",page_title='Cars Price Prediction',page_icon=img)
 

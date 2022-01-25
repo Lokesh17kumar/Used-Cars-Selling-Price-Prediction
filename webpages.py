@@ -68,11 +68,11 @@ eda_text_4 = '''
     </p>
 '''
 
-home_page_gif = r'Animations\CARS\home_page.json'
+home_page_gif = r'home_page.json'
 
-eda_page_gif = r'Animations\ANALYSIS\analysis_3.json'
+eda_page_gif = r'analysis_3.json'
 
-predict_page_gif = r'Animations\PRICE\price_1.json'
+predict_page_gif = r'price_1.json'
 
 eda_title = '<p style="serif;color:#2cd361;font-size:40px;"><center> Exploratory Data Analysis </center></p>'
 

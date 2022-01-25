@@ -9,7 +9,7 @@ cf.go_offline()
 # CONFIGURING 'config' file
 cf.set_config_file(offline=True, world_readable=True,sharing=True)
 
-file_path = r'Data\MAIN DATA.csv'
+file_path = r'MAIN DATA.csv'
 
 @st.experimental_memo
 def showData() :
