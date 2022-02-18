@@ -191,7 +191,7 @@ def edaPage() :
         # DISPLAY TEXT
         pie_plot = eda.plot2()   
         
-        st.header('Car marktet based on fuel type'.upper())
+        st.header('Car market based on fuel type'.upper())
         
         st.plotly_chart(pie_plot)  
            
