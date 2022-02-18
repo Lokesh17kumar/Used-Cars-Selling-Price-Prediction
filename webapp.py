@@ -14,6 +14,12 @@ hide_menu = '''
     footer {visibility:hidden;}
     </style>
     '''
+
+temp = '''
+    <body style="background-color:powderblue;">    
+    </body>
+'''
+    
 st.markdown(hide_menu,unsafe_allow_html=True)
 
 # VARIABLES
@@ -28,6 +34,8 @@ menu_items = ['Home','EDA','Predict Price']
 def main() :
     
     ''' Function to start our program'''
+    
+    st.markdown(temp,unsafe_allow_html=True)
 
     # NAVIGATION BAR
     navigation_bar = st.sidebar.radio(menu_name,menu_items)

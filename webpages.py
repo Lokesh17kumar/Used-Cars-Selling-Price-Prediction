@@ -35,7 +35,7 @@ eda_text_1 = '''
 
 eda_text_2 = '''
     <p style="font-size:20px">
-    <br>Correlation is an indication about the changes between two variables. The checkbox below is used to view cor-relation between my data. 
+    <br>The following is the statistical information about my project data. 
     </p>
 '''
 
@@ -67,6 +67,26 @@ eda_text_4 = '''
     </ul>
     </p>
 '''
+
+eda_text_5 = '''
+    <p style="font-size:20px">
+    <br>Correlation is used to describe the linear relationship between two continuous variables. It measures the strength (qualitatively) 
+    and direction of the linear relationship between two or more variables.
+    </p>
+'''
+
+eda_text_6 = '''
+    <p style="font-size:20px">
+    <br>Popularity of the car based on fuel type.
+    </p>
+'''
+
+eda_text_7 = '''
+    <p style="font-size:20px">
+    <br>The following graph is used to visualize the relation between ENGINE and MILEAGE features.
+    </p>
+'''
+
 
 home_page_gif = r'home_page.json'
 
@@ -123,7 +143,7 @@ def edaPage() :
     st.markdown(eda_text_1,unsafe_allow_html=True)
     
     # IF CHECKBOX IS CLICKED   
-    if st.checkbox('View Data'.upper()) :
+    if st.checkbox('View Data'.upper() , key = 1) :
         
         # SHOW DATA
         data = eda.showData()
@@ -135,7 +155,7 @@ def edaPage() :
     st.markdown(eda_text_2,unsafe_allow_html=True)    
         
     # IF CHECKBOX IS CLICKED   
-    if st.checkbox('View Information about the data'.upper()) :
+    if st.checkbox('View Information about the data'.upper() , key = 2) :
         
         # SHOW DATA
         data = eda.dataInfo()
@@ -146,10 +166,48 @@ def edaPage() :
     # DISPLAY TEXT
     st.markdown(eda_text_3,unsafe_allow_html=True)    
         
-    if st.checkbox('view features'.upper()) :
+    if st.checkbox('view features'.upper() , key = 3) :
         
         # DISPLAY TEXT
         st.markdown(eda_text_4,unsafe_allow_html=True)    
+        
+    # DISPLAY TEXT
+    st.markdown(eda_text_5,unsafe_allow_html=True)    
+        
+    if st.checkbox('view cor-relation'.upper() ,  key = 4) :
+        
+        # DISPLAY TEXT
+        cor_plot = eda.corrPlot()        
+        
+        st.header('Cor-relation Matrix'.upper())
+        
+        st.plotly_chart(cor_plot)     
+        
+    # DISPLAY TEXT
+    st.markdown(eda_text_6,unsafe_allow_html=True)
+    
+    if  st.checkbox('view graph'.upper() , key = 5):
+        
+        # DISPLAY TEXT
+        pie_plot = eda.plot2()   
+        
+        st.header('Car marktet based on fuel type'.upper())
+        
+        st.plotly_chart(pie_plot)  
+           
+     
+    # DISPLAY TEXT
+    st.markdown(eda_text_7,unsafe_allow_html=True)
+    
+    if  st.checkbox('view graph'.upper() , key = 6):
+        
+        # DISPLAY TEXT
+        scatter_plot = eda.plot3()   
+        
+        st.header('ENGINE (VS) MILEAGE'.upper())
+        
+        st.plotly_chart(scatter_plot)  
+        
 
 def predictPage() :
     

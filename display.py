@@ -19,6 +19,15 @@ def spaceCheck(inp) :
 
         return True
 
+def currencyCheck(inp) :
+    
+    ''' Function to check for currency'''
+    
+    char = ','
+    
+    if char in inp :
+        
+        return True    
 
 def isFloat(inp) :
     
@@ -38,11 +47,11 @@ def typeCheck(inp) :
     
     ''' Function to check type of the input'''
     
-    if not( (inp.isnumeric()) or (isFloat(inp)) ):
+    if not( (inp.isnumeric()) or (isFloat(inp)) or (currencyCheck(inp)) ):
         
        st.warning('Please do no enter text or characters in the input(s)')
        
-       return 1 
+       return True 
         
 
 def negCheck(inp) :
@@ -56,10 +65,14 @@ def negCheck(inp) :
             st.warning('Please do not enter negative value(s)')
             
             return True
+        
+        else : 
+            
+            return False
     
     except ValueError :
         
-        pass    
+        return False    
         
 
 def validate(inp1,inp2,inp3,inp4,inp5) :
@@ -77,6 +90,7 @@ def validate(inp1,inp2,inp3,inp4,inp5) :
 
         
         for inp in data :
+        
             
             if spaceCheck(inp) :
                 
@@ -102,5 +116,5 @@ def displayOutput(sell_price,val=4) :
                 
         #DISPLAY OUTPUT
             
-        st.success('The estimated selling price for your car is  :  {0} {1}'.format(round(sell_price,val),'\u20B9'))
+        st.success('The estimated selling price for your car is  :  {0} {1}'.format(sell_price,'\u20B9'))
          
