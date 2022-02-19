@@ -227,7 +227,7 @@ def predictPage() :
     
     inp3 = st.slider('Select the total distance travelled with your vehicle  : '.title() , min_value = 100 , max_value = 300000 , step = 100 , value = 100)
     
-    inp4 = st.slider('Since how many years are you driving your vehicle : '.title() , min_value = 0 , max_value = 15 , value = 0)
+    inp4 = st.slider('Select the age of your vehicle : '.title() , min_value = 0 , max_value = 15 , value = 0)
     
     inp5 = st.slider('Select your car\'s mileage : '.title() , min_value = 4.00 , max_value = 35.00 , value = 4.00)
     
