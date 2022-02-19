@@ -10,16 +10,9 @@ def preProcess(data) :
     
     ''' Function to pre-process data'''
     
-    char = ','
     
     # CHANGING DATA TYPE TO FLOAT
     for ind , val in enumerate(data) :
-        
-        if char in val :
-            
-            val_list = val.split(',')
-            
-            val = ''.join(val_list)
         
         data[ind] = float(val)
     
@@ -32,7 +25,7 @@ def predictPrice(data) :
     
     ''' Function to predict price'''
     
-    sell_price = round(model.predict(data)[0] , 4)
+    sell_price = round(model.predict(data)[0] , 3)
     
     result = '{:,}'.format(sell_price)
     

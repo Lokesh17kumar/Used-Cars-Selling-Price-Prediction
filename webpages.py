@@ -221,15 +221,15 @@ def predictPage() :
     
     
     ## INPUTS FOR OUR MODEL
-    inp1 = st.text_input('Enter the minimum cost price of your vehicle : '.upper(),placeholder="ENTER THE MINIMUM COST PRICE VALUE IN RUPEES")
+    inp1 = st.slider('Select the minimum cost price of your vehicle : '.title() , min_value = 50000 , max_value = 9000000 , step = 10000 , value = 50000)
     
-    inp2 = st.text_input('Enter the maximum cost price of your vehicle : '.upper(),placeholder="ENTER THE MAXIMUM COST PRICE VALUE IN RUPEES")
+    inp2 = st.slider('Select the maximum cost price of your vehicle : '.title() , min_value = 100000 , max_value = 10000000 , step = 10000 , value = 100000)
     
-    inp3 = st.text_input('Enter the total distance travelled with your vehicle  : '.upper(),placeholder="ENTER THE DISTANCE VALUE IN KM")
+    inp3 = st.slider('Select the total distance travelled with your vehicle  : '.title() , min_value = 100 , max_value = 300000 , step = 100 , value = 100)
     
-    inp4 = st.text_input('Since how many years are you driving your vehicle : '.upper(),placeholder="ENTER THE VEHICLE AGE IN YEARS")
+    inp4 = st.slider('Since how many years are you driving your vehicle : '.title() , min_value = 0 , max_value = 15 , value = 0)
     
-    inp5 = st.text_input('Enter your car\'s mileage : '.upper(),placeholder="ENTER THE MILEAGE VALUE IN KMPL")
+    inp5 = st.slider('Select your car\'s mileage : '.title() , min_value = 4.00 , max_value = 35.00 , value = 4.00)
     
     
     # SPLITTING INTO # COLUMNS
@@ -251,15 +251,6 @@ def predictPage() :
     
     # IF SUBMIT BUTTON IS CLICKED
     if submit :
-        
-        
-        val = dis.validate(inp1,inp2,inp3,inp4,inp5)
-        
-        if val :
-            
-            st.warning('Please enter valid Inputs')
-            
-        else :
             
             data = [inp3,inp4,inp2,inp1,inp5]
             

@@ -1,14 +1,7 @@
 import pandas as pd
 import streamlit as st
-import cufflinks as cf
-import plotly.offline
 import plotly.express as px
 
-# USING CUFFLINKS IN OFFLINE MODE
-cf.go_offline()
-
-# CONFIGURING 'config' file
-cf.set_config_file(offline=True, world_readable=True,sharing=True)
 
 file_path = r'MAIN DATA.csv'
 
